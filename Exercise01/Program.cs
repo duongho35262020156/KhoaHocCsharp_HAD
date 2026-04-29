@@ -23,11 +23,11 @@ public class Program
         // --- BÀI 4: to convert feet to meter ---
         float feet = 10.05f;
         float meter = 0.3048f * feet;
-        Console.WriteLine($"4.\tConvert feet to meter: {feet} feets = {meter} meters");
+        Console.WriteLine($"4.\tConvert feet to meter: {feet} feet = {meter} meters");
         // --- BÀI 5: to convert Celsius to Fahrenheit and vice versa ---
-        float Celsius = 25.0f;
-        float Fahrenheit = (Celsius * 9 / 5) + 32;
-        Console.WriteLine($"5.\tConvert Celsius to Fahrenheit: {Celsius} Celsius = {Fahrenheit} Fahrenheis");
+        float celsius = 25.0f;
+        float fahrenheit = (celsius * 9 / 5) + 32;
+        Console.WriteLine($"5.\tConvert Celsius to Fahrenheit: {celsius} Celsius = {fahrenheit} Fahrenheis");
         
         float F1 = 77.0f;
         float C1 = (F1 - 32) * 5 / 9; 
