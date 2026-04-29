@@ -52,9 +52,25 @@ public class Program
         // 4. In kết quả
         Console.WriteLine("\n7.1\tKy tu ban vua nhap la: " + inputChar);
         Console.WriteLine("7.2\tGia tri ASCII tuong ung la: " + asciiValue);
+        
+        // --- BÀI 8: to find the area of a circle ---
+        float radius = 5.0f;
+        float pi = (float)Math.PI; // Sử dụng Math.PI để lấy giá trị chính xác của π
+        float area = (float)(pi * Math.Pow(radius, 2));
+        Console.WriteLine($"8.\tDiện tích hình tròn có bán kính r = {radius} là {area}");
+        
+        // --- BÀI 9: to Calculate Area of Square ---
+        float side = 4.0f;
+        float areaSquare = side * side;
+        Console.WriteLine($"9.\tDiện tích hình vuông có cạnh = {side} là {areaSquare}");
 
-        // Giữ màn hình
-        Console.WriteLine("\nNhấn phím bất kỳ để thoát...");
-        Console.ReadKey();
+        // --- BÀI 10: to convert days to years, weeks and days ---
+        int ngay = 400;
+        int nam = ngay / 365;
+        int remainingDays = ngay % 365;
+        int tuan = remainingDays / 7;
+        int finalDay = remainingDays % 7;
+        Console.WriteLine($"10.\t{ngay} ngày bằng {nam} năm, {tuan} tuần, {finalDay} ngày");
+
     }
 }
