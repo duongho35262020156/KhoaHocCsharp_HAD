@@ -16,14 +16,16 @@ public class Program
         Console.WriteLine($"2.1\tTrước khi hoán đổi: x = {x}, y = {y}");
         temp = x; x = y; y = temp;
         Console.WriteLine($"2.2\tSau khi hoán đổi: x = {x}, y = {y}");
-
+                
         // --- BÀI 3: NHÂN SỐ THỰC ---
         float f1 = 1.5f, f2 = 2.5f;
         Console.WriteLine($"3.\tTích hai số thực {f1} * {f2} là: {f1 * f2}");
+        
         // --- BÀI 4: to convert feet to meter ---
         float feet = 10.05f;
         float meter = 0.3048f * feet;
         Console.WriteLine($"4.\tConvert feet to meter: {feet} feet = {meter} meters");
+        
         // --- BÀI 5: to convert Celsius to Fahrenheit and vice versa ---
         float celsius = 25.0f;
         float fahrenheit = (celsius * 9 / 5) + 32;
@@ -32,30 +34,25 @@ public class Program
         float F1 = 77.0f;
         float C1 = (F1 - 32) * 5 / 9; 
         Console.WriteLine($"5.\tConvert Fahrenheit to us Celsius :{F1} Fahrenheis={C1} Celsius");
+        
         // --- BÀI 6: to find the Size of data types ---
-        Console.WriteLine("Kích thước của kiểu int là: " + sizeof(int) + " bytes");
-        Console.WriteLine("Kích thước của kiểu float là: " + sizeof(float) + " bytes");
-        Console.WriteLine("Kích thước của kiểu double là: " + sizeof(double) + " bytes");
-        Console.WriteLine("Kích thước của kiểu char là: " + sizeof(char) + " bytes");
+        Console.WriteLine("6.1\tKích thước của kiểu int là: " + sizeof(int) + " bytes");
+        Console.WriteLine("6.2\tKích thước của kiểu float là: " + sizeof(float) + " bytes");
+        Console.WriteLine("6.3\tKích thước của kiểu double là: " + sizeof(double) + " bytes");
+        Console.WriteLine("6.4\tKích thước của kiểu char là: " + sizeof(char) + " bytes");
+        
         // --- BÀI 7. to Print ASCII Value ---
         // 1. Thông báo cho người dùng nhập ký tự
-        Console.Write("Nhap mot ky tu bat ky: ");
-
+        Console.Write("7.\tNhap mot ky tu bat ky: ");
         // 2. Đọc ký tự từ bàn phím
         // Console.ReadKey().KeyChar giúp lấy đúng 1 ký tự duy nhất
         char inputChar = Console.ReadKey().KeyChar;
-
-        // Xuống dòng để kết quả in ra đẹp hơn
-        Console.WriteLine();
-
         // 3. Ép kiểu từ char sang int để lấy mã ASCII
         int asciiValue = (int)inputChar;
-
         // 4. In kết quả
-        Console.WriteLine("Ky tu ban vua nhap la: " + inputChar);
-        Console.WriteLine("Gia tri ASCII tuong ung la: " + asciiValue);
+        Console.WriteLine("\n7.1\tKy tu ban vua nhap la: " + inputChar);
+        Console.WriteLine("7.2\tGia tri ASCII tuong ung la: " + asciiValue);
 
-        // thuc tap push va commit
         // Giữ màn hình
         Console.WriteLine("\nNhấn phím bất kỳ để thoát...");
         Console.ReadKey();
