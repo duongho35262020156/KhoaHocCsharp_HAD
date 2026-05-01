@@ -125,18 +125,77 @@ public class Program
 //14.Bài 18. Check Positive and Negative Pair
         Console.WriteLine("Input first integer:");
         int first = int.Parse(Console.ReadLine());
-
         Console.WriteLine("Input second integer:");
         int second = int.Parse(Console.ReadLine());
 
-        // Bước 2: Kiểm tra điều kiện
-        // Cách viết đầy đủ logic:
         bool result = (first < 0 && second > 0) || (first > 0 && second < 0);
 
-        // Bước 3: In kết quả
         Console.WriteLine("Check if one is negative and one is positive:");
         Console.WriteLine(result);
+
 //15.Bài 19. Sum or Triple Sum of Integers
+        Console.WriteLine("Input first integer:");
+        int firstIn = int.Parse(Console.ReadLine());
+        Console.WriteLine("Input second integer:");
+        int secondIn = int.Parse(Console.ReadLine());
+        int sumIn = firstIn + secondIn;
+        if ( firstIn == secondIn )
+            {Console.WriteLine (sumIn * 3);
+            }
+        else { Console.WriteLine (sumIn);}
+
+//16.Bài 20. Absolute Difference or Double It
+    Console.WriteLine("Input first integer:");
+        int num1 = int.Parse(Console.ReadLine());
+        Console.WriteLine("Input second integer:");
+        int num2 = int.Parse(Console.ReadLine());
+        int absDiff = Math.Abs (num1 - num2);
+        if ( num1 > num2 )
+            {Console.WriteLine (absDiff * 2);
+            }
+        else { Console.WriteLine (absDiff);}
+
+//17.Bài 21. Check for 20 or Sum Equals 20
+Console.WriteLine("Input first integer:");
+        int numb1 = int.Parse(Console.ReadLine());
+        Console.WriteLine("Input second integer:");
+        int numb2 = int.Parse(Console.ReadLine());
+        bool ketQua = (numb1 == 20) || (numb2 == 20) || (numb1+numb2 == 20); 
+        
+        Console.WriteLine(ketQua);
+//18.Bài 22. Check Within 20 of 100 or 200
+    Console.Write("Input an integer: ");
+int n = int.Parse(Console.ReadLine());
+
+// Kiểm tra khoảng cách từ n đến 100 có <= 20 HOẶC từ n đến 200 có <= 20 không
+bool result = Math.Abs(n - 100) <= 20 || Math.Abs(n - 200) <= 20;
+
+Console.WriteLine(result);
+
+//19.Bài 23. Convert String to Lowercase
+string input = "WRITE A C# SHARP PROGRAM TO DISPLAY THE FOLLOWING PATTERN USING THE ALPHABET.";
+
+// Chuyển toàn bộ chuỗi sang chữ thường
+string lowercaseResult = input.ToLower();
+
+Console.WriteLine(lowercaseResult);
+  
+//20.Bài 24. Find Longest Word in String
+string line = "Write a C# Sharp Program to display the following pattern using the alphabet.";
+        
+        // Bước 1: Tách chuỗi thành mảng các từ
+        string[] words = line.Split(' ');
+
+        // Bước 2: Biến để lưu trữ từ dài nhất
+        string longestWord = "";
+
+        // Bước 3: Duyệt qua từng từ trong mảng
+        foreach (string word in words)
+        {
+            // Nếu độ dài từ hiện tại lớn hơn độ dài từ dài nhất đã biết
+            if (word.Length > longestWord.Length)
+            {
+                longestWord = word;
         
 }
  
