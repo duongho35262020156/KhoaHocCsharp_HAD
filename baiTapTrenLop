@@ -5,6 +5,7 @@ public class Program
   public static void Main()
     {// 1. Cho phép gõ tiếng Việt có dấu
     Console.OutputEncoding = System.Text.Encoding.UTF8;
+bangCuuChuong();
 nhap10So();    
 baitap ();
     }
@@ -52,5 +53,17 @@ baitap ();
           Console.WriteLine($"Tổng của 10 số là: {sum}");
           Console.WriteLine($"Trung bình cộng là: {average:F2}");
     }
+      static void bangCuuChuong()
+      {
+         Console.WriteLine ("Insert interger number: ");
+         int so = int.Parse(Console.ReadLine());
+         Console.WriteLine ($"Bảng cửu chương của {so}: ");
+         for (int i = 1; i<=10; i ++)
+         {
+             Console.WriteLine ($"{so}*{i}={so*i}");
+         }
+      }
+      
+
 }
 
