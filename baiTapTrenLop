@@ -5,12 +5,13 @@ public class Program
   public static void Main()
     {// 1. Cho phép gõ tiếng Việt có dấu
     Console.OutputEncoding = System.Text.Encoding.UTF8;
-    baitap ();
+nhap10So();    
+baitap ();
     }
 
   static void baitap()
     {
-    //Write a program to check whether a triangle is Equilateral, Isosceles or Scalene.
+    //1.Write a program to check whether a triangle is Equilateral, Isosceles or Scalene.
     // 1. Nhập độ dài 3 cạnh
         Console.WriteLine("Nhập độ dài 3 cạnh của tam giác:");
         Console.Write("Cạnh a: ");
@@ -35,5 +36,21 @@ public class Program
         else
         {
             Console.WriteLine("Đây là Tam giác thường (Scalene).");
-        }    }
+        }  
+    }
+  static void nhap10So()
+    {
+      //2. Write a program to read 10 numbers and find their average and sum.
+      int sum = 0;
+      double average = 0;
+      for (int i = 1; i <= 10; i++)
+        { Console.WriteLine ($"Nhập số thứ {i}: ");
+          int num = int.Parse(Console.ReadLine());
+          sum += num;
+        }
+          average = (double)sum / 10;
+          Console.WriteLine($"Tổng của 10 số là: {sum}");
+          Console.WriteLine($"Trung bình cộng là: {average:F2}");
+    }
 }
+
