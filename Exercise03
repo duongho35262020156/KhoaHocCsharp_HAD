@@ -33,6 +33,9 @@ public class Program
         Console.Write("Nhập bán kính hình cầu (r): ");
         double r = double.Parse(Console.ReadLine());
         double surfaceArea = 4 * Math.PI * Math.Pow(r, 2);
+        double volume = (4.0 / 3.0) * Math.PI * Math.Pow(r, 3);
+        Console.WriteLine($"Diện tích bề mặt hình cầu: {surfaceArea:F2}");
+        Console.WriteLine($"Thể tích hình cầu: {volume:F2}");
     
       //5.Write a C# Sharp program that takes a character as input and checks if it is a vowel, a digit, or any other symbol.
 
