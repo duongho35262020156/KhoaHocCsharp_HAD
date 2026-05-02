@@ -1,0 +1,39 @@
+//Control flow statements
+using System;
+public class Program
+{
+  public static void Main()
+    {// 1. Cho phép gõ tiếng Việt có dấu
+    Console.OutputEncoding = System.Text.Encoding.UTF8;
+    baitap ();
+    }
+
+  static void baitap()
+    {
+    //Write a program to check whether a triangle is Equilateral, Isosceles or Scalene.
+    // 1. Nhập độ dài 3 cạnh
+        Console.WriteLine("Nhập độ dài 3 cạnh của tam giác:");
+        Console.Write("Cạnh a: ");
+        double a = double.Parse(Console.ReadLine());
+        Console.Write("Cạnh b: ");
+        double b = double.Parse(Console.ReadLine());
+        Console.Write("Cạnh c: ");
+        double c = double.Parse(Console.ReadLine());
+
+        // 2. Kiểm tra điều kiện rẽ nhánh
+        // Ưu tiên kiểm tra tam giác ĐỀU trước
+        if (a == b && b == c)
+        {
+            Console.WriteLine("Đây là Tam giác đều (Equilateral).");
+        }
+        // Kiểm tra tam giác CÂN
+        else if (a == b || b == c || a == c)
+        {
+            Console.WriteLine("Đây là Tam giác cân (Isosceles).");
+        }
+        // Trường hợp còn lại là tam giác THƯỜNG
+        else
+        {
+            Console.WriteLine("Đây là Tam giác thường (Scalene).");
+        }    }
+}
