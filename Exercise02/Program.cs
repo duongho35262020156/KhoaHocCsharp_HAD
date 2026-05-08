@@ -1,202 +1,428 @@
-using System;
+﻿using System;
+using System.ComponentModel;
+using System.ComponentModel.Design;
+using System.Drawing;
+using System.Security.Cryptography;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 public class Program
-{public static void Main()
+{
+    public static void Main()
     {
-  // 1. Cho phép gõ tiếng Việt có dấu
-      Console.OutputEncoding = System.Text.Encoding.UTF8;
-  //Exercise 02: Chọn 20 bài trong basic exercise
-  //1.Bài 1. Print Hello and Name --- Write a C# Sharp program to print Hello and your name in a separate line.
-      string name = "Ánh Dương";
-      Console.WriteLine ($"Câu 1.1\tPrint Hello and Name in separate line: \n\t\tHello \n\t\t{name}");
-  //2.Bài 4. Specified Operations Results
-      int ketQua1 = -1 + 4 * 6;
-      int ketQua2 = (35+ 5 ) % 7;
-      int ketQua3 = 14 + -4 * 6 / 11;
-      int ketQua4 = 2 + 15 / 6 * 1 - 7 % 2;
-  
-      Console.WriteLine ($"Câu 2.4.1\t {ketQua1}");
-      Console.WriteLine ($"Câu 2.4.2\t {ketQua2}");
-      Console.WriteLine ($"Câu 2.4.3\t {ketQua3}");
-      Console.WriteLine ($"Câu 2.4.4\t {ketQua4}");
+        // Ex4Bai1();
+        // Ex4Bai2();
+        // Ex4Bai3();
+        // Ex4Bai4();
+        // Ex4Bai5();
+        //static void Ex4Slide21Cau1();
+        //static void Ex4Slide21Cau2();
+        //static void Ex4Slide21Cau3();
+        //Ex4Slide22Cau1();
+        //Ex4Slide22Cau2();
+        //Ex4Slide22Cau3();
+        //Ex4Slide22Cau4();
+        Ex4Slide22Cau5();
+        //Ex4Slide22Cau6();
+        //Ex4Slide22Cau7();
+        //Ex4Slide22Cau8();
 
- //3.Bài 6. Multiply Three Numbers
-      Console.Write ("Câu 3.6\t\tNhập số thứ 1:");
-      int soThuNhat = int.Parse(Console.ReadLine());
-      Console.Write ("Câu 3.6\t\tNhập số thứ 2:");
-      int soThuHai = int.Parse(Console.ReadLine());
-      Console.Write ("Câu 3.6\t\tNhập số thứ 3:");
-      int soThuBa = int.Parse(Console.ReadLine());
-      int tich = soThuNhat * soThuHai * soThuBa;
-      Console.WriteLine ($"Tích của 3 số: {soThuNhat} * {soThuHai} * {soThuBa} = {tich}");
 
- //4.Bài 7. Arithmetic Operations
-    Console.Write("Input the first number:");
-    int firstNum = int.Parse(Console.ReadLine());
-    Console.Write("Input the second number:");
-    int secondNum = int.Parse(Console.ReadLine());
-    int adding = firstNum + secondNum;
-    int subtracting = firstNum - secondNum;
-    int multiplying = firstNum * secondNum;
-    int dividing = firstNum / secondNum;
-    int modding = firstNum % secondNum;
-        
-    Console.WriteLine ($"Phép cộng: {firstNum} + {secondNum} = {adding}");
-    Console.WriteLine ($"Phép trừ: {firstNum} - {secondNum} = {subtracting}");
-    Console.WriteLine ($"Phép nhân: {firstNum} * {secondNum} = {multiplying}");
-    Console.WriteLine ($"Phép chia: {firstNum} / {secondNum} = {dividing}");
-    Console.WriteLine ($"Số dư: {firstNum} mod {secondNum} = {modding}");
-
-//5.Bài 8. Multiplication Table
-    Console.Write ("Enter a number: ");
-    int n = int.Parse(Console.ReadLine());
-    for (int i = 0; i <= 10; i++)
-    {Console.WriteLine ("{0} * {1,2} = {2,2}",n,i,n*i);}
-//6.Bài 9. Average of Four Numbers
-    Console.Write("Input the first number:");
-    int n1 = int.Parse(Console.ReadLine());
-    Console.Write("Input the second number:");
-    int n2 = int.Parse(Console.ReadLine());
-    Console.Write("Input the third number:");
-    int n3 = int.Parse(Console.ReadLine());
-    Console.Write("Input the fourth number:");
-    int n4 = int.Parse(Console.ReadLine());
-    int average = (n1 + n2 + n3 + n4 )/4;
-    Console.WriteLine ($"The average of {n1}, {n2}, {n3}, {n4} is {average}");
-
-//7.Bài 10. Specified Formula with Three Numbers
-    Console.Write("Enter the first number x=");
-    int x = int.Parse(Console.ReadLine());
-    Console.Write("Enter the second number y=");
-    int y = int.Parse(Console.ReadLine());
-    Console.Write("Enter the third number z=");
-    int z = int.Parse(Console.ReadLine());
-    int result1 = (x+y)*z;
-    int result2 = x*y + y*z;
-    Console.WriteLine ($"Result of specified numbers {x}, {y} and {z}, (x+y).z is {result1} and x.y + y.z is {result2}");
-    
-//8.Bài 11. Print Age Message
-    Console.Write ("Enter your age: ");
-    int age = int.Parse(Console.ReadLine());
-    Console.WriteLine($"You look younger than {age}");
-    
-//9.Bài 12. Repeat Number in Rows
-    Console.Write ("Enter a number: ");
-    int d = int.Parse(Console.ReadLine());
-    Console.WriteLine ("{0} {0} {0} {0}",d);
-    Console.WriteLine ("{0}{0}{0}{0}",d);
-    Console.WriteLine ("{0} {0} {0} {0}",d);
-    Console.WriteLine ("{0}{0}{0}{0}",d);
-    
-//10.Bài 13. Rectangle Pattern with Number
-    Console.Write("Enter a number: ");
-    int nb = int.Parse(Console.ReadLine());
-    Console.WriteLine("{0}{0}{0}", nb);
-    for (int i = 0; i < 3; i++)
-        { Console.WriteLine("{0} {0}", nb);
-            }
-    Console.WriteLine("{0}{0}{0}", nb);
-    
-//11.Bài 15. Remove Character by Index
-    string h = "w3resource";
-    string h1 = h.Remove(1,1);
-    string h2 = h.Remove(9,1);
-    string h3 = h.Remove(0,1);
-    Console.WriteLine (h1);
-    Console.WriteLine (h2);
-    Console.WriteLine (h3);
-
-//12.Bài 16. Swap First and Last Characters
-    string chuoi1 = "w3resource";
-        string firstChar1 = chuoi1.Substring(0,1);
-        string lastChar1 = chuoi1.Substring(9,1);
-        string middlePart1 = chuoi1.Substring(1,8);
-    Console.WriteLine ($"Swap First and Last Characters of {chuoi1} is {lastChar1}{middlePart1}{firstChar1}");
-    string chuoi2 = "Python";
-        string firstChar2 = chuoi2.Substring(0,1);
-        string lastChar2 = chuoi2.Substring(5,1);
-        string middlePart2 = chuoi2.Substring(1,4);
-    Console.WriteLine ($"Swap First and Last Characters of {chuoi2} is {lastChar2}{middlePart2}{firstChar2}");
-
-//13.Bài 17. Add First Character to Front and Back
-    string str = "The quick brown fox jumps over the lazy dog.";
-    string firstStr = str.Substring(0,1);
-    Console.WriteLine ($"Add First Character to Front and Back of \"{str}\" is: {firstStr}{str}{firstStr}");
-
-//14.Bài 18. Check Positive and Negative Pair
-        Console.WriteLine("Input first integer:");
-        int first = int.Parse(Console.ReadLine());
-        Console.WriteLine("Input second integer:");
-        int second = int.Parse(Console.ReadLine());
-
-        bool result = (first < 0 && second > 0) || (first > 0 && second < 0);
-
-        Console.WriteLine("Check if one is negative and one is positive:");
-        Console.WriteLine(result);
-
-//15.Bài 19. Sum or Triple Sum of Integers
-        Console.WriteLine("Input first integer:");
-        int firstIn = int.Parse(Console.ReadLine());
-        Console.WriteLine("Input second integer:");
-        int secondIn = int.Parse(Console.ReadLine());
-        int sumIn = firstIn + secondIn;
-        if ( firstIn == secondIn )
-            {Console.WriteLine (sumIn * 3);
-            }
-        else { Console.WriteLine (sumIn);}
-
-//16.Bài 20. Absolute Difference or Double It
-    Console.WriteLine("Input first integer:");
-        int num1 = int.Parse(Console.ReadLine());
-        Console.WriteLine("Input second integer:");
-        int num2 = int.Parse(Console.ReadLine());
-        int absDiff = Math.Abs (num1 - num2);
-        if ( num1 > num2 )
-            {Console.WriteLine (absDiff * 2);
-            }
-        else { Console.WriteLine (absDiff);}
-
-//17.Bài 21. Check for 20 or Sum Equals 20
-Console.WriteLine("Input first integer:");
-        int numb1 = int.Parse(Console.ReadLine());
-        Console.WriteLine("Input second integer:");
-        int numb2 = int.Parse(Console.ReadLine());
-        bool ketQua = (numb1 == 20) || (numb2 == 20) || (numb1+numb2 == 20); 
-        
-        Console.WriteLine(ketQua);
-//18.Bài 22. Check Within 20 of 100 or 200
-    Console.Write("Input an integer: ");
-int n = int.Parse(Console.ReadLine());
-
-// Kiểm tra khoảng cách từ n đến 100 có <= 20 HOẶC từ n đến 200 có <= 20 không
-bool result = Math.Abs(n - 100) <= 20 || Math.Abs(n - 200) <= 20;
-
-Console.WriteLine(result);
-
-//19.Bài 23. Convert String to Lowercase
-string input = "WRITE A C# SHARP PROGRAM TO DISPLAY THE FOLLOWING PATTERN USING THE ALPHABET.";
-
-// Chuyển toàn bộ chuỗi sang chữ thường
-string lowercaseResult = input.ToLower();
-
-Console.WriteLine(lowercaseResult);
-  
-//20.Bài 24. Find Longest Word in String
-string line = "Write a C# Sharp Program to display the following pattern using the alphabet.";
-        
-        // Bước 1: Tách chuỗi thành mảng các từ
-        string[] words = line.Split(' ');
-
-        // Bước 2: Biến để lưu trữ từ dài nhất
-        string longestWord = "";
-
-        // Bước 3: Duyệt qua từng từ trong mảng
-        foreach (string word in words)
+        static void Ex4Bai1()
         {
-            // Nếu độ dài từ hiện tại lớn hơn độ dài từ dài nhất đã biết
-            if (word.Length > longestWord.Length)
+            //Write a C# Sharp program that takes two numbers as input and performs an operation(+, -, *, x,/) on them and displays the result of that operation.
+            Console.Write("Enter the first number: ");
+            double num1 = Convert.ToDouble(Console.ReadLine());
+
+            Console.Write("Enter the second number: ");
+            double num2 = Convert.ToDouble(Console.ReadLine());
+
+            Console.Write("Enter the operation (+, -, *, /): ");
+            string operation = Console.ReadLine();
+
+            double result = 0;
+
+            switch (operation)
             {
-                longestWord = word;
-        
-}
- 
+                case "+":
+                    result = num1 + num2;
+                    break;
+                case "-":
+                    result = num1 - num2;
+                    break;
+                case "*":
+                case "x":
+                    result = num1 * num2;
+                    break;
+                case "/":
+                    if (num2 != 0)
+                    {
+                        result = num1 / num2;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Division by zero is not allowed.");
+                        return;
+                    }
+                    break;
+                default:
+                    Console.WriteLine("Invalid operation.");
+                    return;
+            }
+
+            Console.WriteLine("The result is: " + result);
+        }
+
+        static void Ex4Bai2()
+        {
+            //Write a C# Sharp program to display certain values of the function x = y2+2y + 1(using integer numbers for y, ranging from - 5 to + 5).
+            Console.WriteLine("\nValues of the function x = y^2 + 2y + 1 for y from -5 to 5:");
+            for (int y = -5; y <= 5; y++)
+            {
+                int x = y * y + 2 * y + 1; // This is equivalent to (y + 1) * (y + 1)       
+                Console.WriteLine($"y: {y}, x: {x}");
+            }
+        }
+
+        static void Ex4Bai3()
+        {
+            //Write a C# Sharp program that takes distance and time (hours, minutes,seconds) as input and displays speed in kilometers per hour(km / h) and miles per hour(miles/ h).
+            Console.WriteLine("\nEnter distance in kilometers: ");
+            double distancekm = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("Enter time in hours: ");
+            double hours = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("Enter time in minutes: ");
+            double minutes = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("Enter time in seconds: ");
+            double seconds = Convert.ToDouble(Console.ReadLine());
+            double totalHours = hours + (minutes / 60) + (seconds / 3600);
+            double speedKmh = distancekm / totalHours;
+            double speedMh = speedKmh / 1.609; // Convert km/h to miles/h
+            Console.WriteLine($"Speed in km/h: {speedKmh:F2}");
+            Console.WriteLine($"Speed in miles/h: {speedMh:F2}");
+        }
+
+        static void Ex4Bai4()
+        {
+            //Write a C# Sharp program that takes the radius of a sphere as input and calculates and displays the surface and volume of the sphere. V = 4 / 3 * π * r^3
+            Console.WriteLine("\nEnter the radius of the sphere: ");
+            double radius = Convert.ToDouble(Console.ReadLine());
+            double surface = 4 * Math.PI * Math.Pow(radius, 2);
+            double volume = (4.0 / 3.0) * Math.PI * Math.Pow(radius, 3);
+            Console.WriteLine($"Surface area: {surface:F2}");
+            Console.WriteLine($"Volume: {volume:F2}");
+        }
+        static void Ex4Bai5()
+        {
+
+            //Write a C# Sharp program that takes a character as input and checks if it is a vowel, a digit, or any other symbol.
+            Console.WriteLine("\nEnter a character: ");
+            Char inputChar = Console.ReadKey().KeyChar; // Read a single character from the user
+            Char lowerChar = Char.ToLower(inputChar); // Convert to lowercase for easier comparison
+                                                      // Check if the character is a vowel
+            if (lowerChar == 'a' || lowerChar == 'u' || lowerChar == 'e' || lowerChar == 'o' || lowerChar == 'i')
+            {
+                Console.WriteLine($"\n{inputChar} is a vowel");
+            }
+            else if (Char.IsDigit(lowerChar))
+            {
+                Console.WriteLine($"\n{inputChar} is a digit");
+            }
+            else
+            {
+                Console.WriteLine($"\n{inputChar} is a symbol");
+            }
+        }
+        //Control flow statements slide 21st
+        static void Ex4Slide21Cau1()
+        {
+            //Write a C# Sharp program to check whether a given number is even or odd.
+            Console.Write("\n Enter a number: ");
+            int number = int.Parse(Console.ReadLine());
+            if (number % 2 == 0)
+            { Console.WriteLine($"\n {number} is an even number"); }
+            else { Console.WriteLine($"\n {number} is an odd number"); }
+        }
+        static void Ex4Slide21Cau2()
+        {
+            //Write a C# Sharp program to find the largest of three numbers.
+            Console.Write("\n Enter the first number: ");
+            int num1 = int.Parse(Console.ReadLine());
+            Console.Write("\n Enter the second number: ");
+            int num2 = int.Parse(Console.ReadLine());
+            Console.Write("\n Enter the third number: ");
+            int num3 = int.Parse(Console.ReadLine());
+            int largest = num1;
+            if (num2 > largest)
+            {
+                largest = num2;
+            }
+            if (num3 > largest)
+            {
+                largest = num3;
+            }
+            Console.WriteLine($"\nThe largest number is: {largest}");
+        }
+        static void Ex4Slide21Cau3()
+        {
+            //Write a C# Sharp program to accept a coordinate point in an XY coordinate system and determine in which quadrant the coordinate point lies.
+            Console.Write("\n Enter the X coordinate: ");
+            int x = int.Parse(Console.ReadLine());
+            Console.Write("\n Enter the Y coordinate: ");
+            int y = int.Parse(Console.ReadLine());
+            // Kiểm tra logic để xác định vị trí
+            if (x > 0 && y > 0)
+            {
+                Console.WriteLine("The coordinate point ({0}, {1}) lies in the First quadrant.", x, y);
+            }
+            else if (x < 0 && y > 0)
+            {
+                Console.WriteLine("The coordinate point ({0}, {1}) lies in the Second quadrant.", x, y);
+            }
+            else if (x < 0 && y < 0)
+            {
+                Console.WriteLine("The coordinate point ({0}, {1}) lies in the Third quadrant.", x, y);
+            }
+            else if (x > 0 && y < 0)
+            {
+                Console.WriteLine("The coordinate point ({0}, {1}) lies in the Fourth quadrant.", x, y);
+            }
+            else if (x == 0 && y == 0)
+            {
+                Console.WriteLine("The coordinate point ({0}, {1}) is at the Origin.", x, y);
+            }
+            else
+            {
+                Console.WriteLine("The coordinate point ({0}, {1}) lies on the axis.", x, y);
+            }
+        }
+
+        static void Ex4Slide22Cau1()
+            {
+                // Write a program to check whether a triangle is Equilateral, Isosceles or Scalene.
+                Console.Write("\n Enter the length of the first side: ");
+                    double side1 = Convert.ToDouble(Console.ReadLine());
+                Console.Write("\n Enter the length of the second side: ");
+                    double side2 = Convert.ToDouble(Console.ReadLine());
+                Console.Write("\n Enter the length of the third side: ");
+                    double side3 = Convert.ToDouble(Console.ReadLine());
+                if (side1 == side2 && side2 == side3)
+                {
+                    Console.WriteLine("\n The triangle is Equilateral.");
+                }
+                else if (side1 == side2 || side2 == side3 || side1 == side3)
+                {
+                    Console.WriteLine("\n The triangle is Isosceles.");
+                }
+                else
+                {
+                    Console.WriteLine("\n The triangle is Scalene.");
+                }
+
+            }
+        static void Ex4Slide22Cau2()
+        {
+            //Write a program to read 10 numbers and find their average and sum.
+            int i;
+            double n, sum = 0, avg;
+
+            Console.WriteLine("----- Calculate Sum and Average of 10 numbers -----");
+            Console.WriteLine("Input the 10 numbers:");
+
+            // Vòng lặp chạy 10 lần để nhận dữ liệu
+            for (i = 1; i <= 10; i++)
+            {
+                Console.Write("Number-{0} : ", i);
+                n = Convert.ToDouble(Console.ReadLine());
+
+                // Cộng dồn vào biến sum
+                sum += n;
+            }
+
+            // Tính trung bình cộng
+            avg = sum / 10.0;
+
+            // Hiển thị kết quả
+            Console.WriteLine("\n-------------------------------------------");
+            Console.WriteLine("The sum of 10 numbers is : {0}", sum);
+            Console.WriteLine("The average is : {0}", avg);
+        }
+        static void Ex4Slide22Cau3()
+        {
+            //Write a program to display the multiplication table of a given integer.
+            int j, n;
+
+            Console.WriteLine("----- Display the multiplication table -----");
+            Console.Write("Input the number (Table to be calculated): ");
+            n = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("\nMultiplication table for {0}:", n);
+
+            // Vòng lặp chạy từ 1 đến 10
+            for (j = 1; j <= 10; j++)
+            {
+                // In theo định dạng: số x thứ_tự = kết_quả
+                Console.WriteLine("{0} X {1} = {2}", n, j, n * j);
+            }
+        }
+        static void Ex4Slide22Cau4()
+        {
+            //Write a program to display a pattern like triangles with a number.
+            Console.Write("Input number of rows: ");
+            int rows = Convert.ToInt32(Console.ReadLine());
+
+            for (int i = 1; i <= rows; i++) // Vòng lặp hàng
+            {
+                for (int j = 1; j <= i; j++) // Vòng lặp cột (số lượng số trong hàng)
+                {
+                    Console.Write(i);
+                }
+                Console.WriteLine(); // Xuống dòng sau khi in xong một hàng
+            }
+
+        }
+        static void Ex4Slide22Cau5()
+        {
+            int n = 4; // Số hàng muốn in
+            for (int i = 1; i <= n; i++)
+            {
+                for (int j = 1; j <= i; j++)
+                {
+                    Console.Write(j);
+                }
+                Console.WriteLine(); // Xuống dòng sau mỗi hàng
+            };
+            int n1 = 4;
+            int k1 = 1; // Biến tích lũy tăng dần
+            for (int i = 1; i <= n1; i++)
+            {
+                for (int j = 1; j <= i; j++)
+                {
+                    Console.Write(k1 + " ");
+                    k1++;
+                }
+                Console.WriteLine();
+            };
+            int n2 = 4;
+            int k2 = 1;
+            for (int i = 1; i <= n2; i++)
+            {
+                // 1. Vòng lặp in khoảng trắng (số khoảng trắng giảm dần theo hàng)
+                for (int space = 1; space <= n2  - i; space++)
+                {
+                    Console.Write(" ");
+                }
+
+                // 2. Vòng lặp in số (giống hình 2)
+                for (int j = 1; j <= i; j++)
+                {
+                    Console.Write(k2 + " ");
+                    k2++;
+                }
+                Console.WriteLine();
+            };
+        }
+        static void Ex4Slide22Cau6()
+        {
+            //Write a program to display the n terms of harmonic series and their sum. 1 + 1 / 2 + 1 / 3 + 1 / 4 + 1 / 5... 1 / n terms
+            int i, n;
+            double s = 0.0;
+
+            Console.WriteLine("----- Calculate n terms of Harmonic Series -----");
+            Console.Write("Input the number of terms: ");
+            n = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("\nDisplaying the series:");
+
+            for (i = 1; i <= n; i++)
+            {
+                // In định dạng phân số
+                if (i < n)
+                {
+                    Console.Write("1/{0} + ", i);
+                }
+                else
+                {
+                    Console.Write("1/{0}", i);
+                }
+
+                // Cộng dồn vào tổng
+                // Lưu ý: Phải dùng 1.0 để máy tính hiểu là phép chia số thực
+                s += 1.0 / i;
+            }
+
+            Console.WriteLine("\n\nSum of Series up to {0} terms: {1:F6}", n, s);
+
+        }
+        static void Ex4Slide22Cau7()
+        {
+            //Write a program to find the ‘perfect’ numbers within a given number range.
+            int n, i, j, sum;
+            int start, end;
+
+            Console.WriteLine("----- Find Perfect Numbers within a range -----");
+
+            Console.Write("Input starting range: ");
+            start = Convert.ToInt32(Console.ReadLine());
+
+            Console.Write("Input ending range: ");
+            end = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("\nThe perfect numbers in the given range are:");
+
+            // Vòng lặp duyệt qua từng số trong khoảng từ start đến end
+            for (n = start; n <= end; n++)
+            {
+                sum = 0;
+
+                // Tìm các ước số của n (chạy từ 1 đến n-1)
+                for (i = 1; i < n; i++)
+                {
+                    if (n % i == 0)
+                    {
+                        sum += i;
+                    }
+                }
+
+                // Nếu tổng các ước bằng chính số đó thì đó là số hoàn hảo
+                if (sum == n && n != 0)
+                {
+                    Console.Write("{0} ", n);
+                }
+            }
+            Console.WriteLine();
+        }
+        static void Ex4Slide22Cau8()
+        {
+
+            int n, i, count = 0;
+
+            Console.WriteLine("----- Check whether a number is prime or not -----");
+            Console.Write("Input a number: ");
+            n = Convert.ToInt32(Console.ReadLine());
+
+            // Số nguyên tố phải lớn hơn 1
+            if (n <= 1)
+            {
+                Console.WriteLine("{0} is not a prime number.", n);
+                return;
+            }
+
+            // Kiểm tra các ước số từ 2 đến căn bậc hai của n
+            // Cách viết i * i <= n tương đương với i <= sqrt(n) nhưng chạy nhanh hơn
+            for (i = 2; i * i <= n; i++)
+            {
+                if (n % i == 0)
+                {
+                    count++;
+                    break; // Tìm thấy một ước là đủ để kết luận không phải số nguyên tố
+                }
+            }
+
+            if (count == 0)
+                Console.WriteLine("{0} is a prime number.", n);
+            else
+                Console.WriteLine("{0} is not a prime number.", n);
+        }
+        }
+
+
 }
